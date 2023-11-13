@@ -21,7 +21,7 @@ default: &default
 
 development:
   <<: *default
-  database: manago_development
+  database: manago
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
