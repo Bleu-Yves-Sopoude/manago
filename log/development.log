@@ -1157,3 +1157,336 @@ Processing by PurchasesController#new as HTML
 Completed 200 OK in 31ms (Views: 9.3ms | ActiveRecord: 1.0ms | Allocations: 6242)
 
 
+Started GET "/" for 127.0.0.1 at 2023-11-13 15:06:18 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#splash as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/splash.html.erb within layouts/application
+  Rendered static_pages/splash.html.erb within layouts/application (Duration: 6.1ms | Allocations: 435)
+  Rendered layout layouts/application.html.erb (Duration: 1430.6ms | Allocations: 41543)
+Completed 200 OK in 1545ms (Views: 1501.5ms | ActiveRecord: 0.0ms | Allocations: 45853)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/**/*"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap/scss/bootstrap"):
+  
+Started GET "/" for 127.0.0.1 at 2023-11-13 15:06:24 +0000
+Processing by StaticPagesController#splash as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/splash.html.erb within layouts/application
+  Rendered static_pages/splash.html.erb within layouts/application (Duration: 0.4ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 2225)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 2465)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap/scss/bootstrap"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/**/*"):
+  
+Started GET "/" for 127.0.0.1 at 2023-11-13 15:06:35 +0000
+Processing by StaticPagesController#splash as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/splash.html.erb within layouts/application
+  Rendered static_pages/splash.html.erb within layouts/application (Duration: 0.3ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 2291)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 2530)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap/scss/bootstrap"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/**/*"):
+  
+Started GET "/" for 127.0.0.1 at 2023-11-13 15:08:27 +0000
+Processing by StaticPagesController#splash as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/splash.html.erb within layouts/application
+  Rendered static_pages/splash.html.erb within layouts/application (Duration: 1.1ms | Allocations: 231)
+  Rendered layout layouts/application.html.erb (Duration: 181.1ms | Allocations: 13727)
+Completed 200 OK in 187ms (Views: 186.1ms | ActiveRecord: 0.0ms | Allocations: 14639)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/**/*"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap/scss/bootstrap"):
+  
+Started GET "/" for 127.0.0.1 at 2023-11-13 15:09:39 +0000
+Processing by StaticPagesController#splash as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/splash.html.erb within layouts/application
+  Rendered static_pages/splash.html.erb within layouts/application (Duration: 0.4ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 29.9ms | Allocations: 3556)
+Completed 200 OK in 32ms (Views: 30.9ms | ActiveRecord: 0.0ms | Allocations: 3791)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-13 15:09:42 +0000
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (23.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/categories
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 235ms (ActiveRecord: 82.8ms | Allocations: 20722)
+
+
+Started GET "/categories" for 127.0.0.1 at 2023-11-13 15:09:42 +0000
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategoryPurchase Load (0.6ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mPurchase Load (0.6ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (Duration: 30.1ms | Allocations: 571)
+  Rendered layout layouts/application.html.erb (Duration: 35.3ms | Allocations: 2559)
+Completed 200 OK in 285ms (Views: 38.6ms | ActiveRecord: 13.4ms | Allocations: 31111)
+
+
+Started GET "/users/wsx" for 127.0.0.1 at 2023-11-13 15:09:42 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/users/wsx"):
+  
+Started GET "/categories/1" for 127.0.0.1 at 2023-11-13 15:09:46 +0000
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  [1m[36mCategoryPurchase Load (0.5ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  [1m[36mPurchase Load (0.3ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 26.7ms | Allocations: 707)
+  Rendered layout layouts/application.html.erb (Duration: 36.3ms | Allocations: 2673)
+Completed 200 OK in 119ms (Views: 38.6ms | ActiveRecord: 1.8ms | Allocations: 6932)
+
+
+Started GET "/categories/wsx" for 127.0.0.1 at 2023-11-13 15:09:46 +0000
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"wsx"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+Completed 404 Not Found in 12ms (ActiveRecord: 0.7ms | Allocations: 2584)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Category with 'id'=wsx):
+  
+app/controllers/categories_controller.rb:27:in `show'
+Started GET "/categories/1/purchases/new" for 127.0.0.1 at 2023-11-13 15:10:00 +0000
+Processing by PurchasesController#new as HTML
+  Parameters: {"category_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:11:in `new'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:12:in `new'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/purchases_controller.rb:12:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering purchases/new.html.erb within layouts/application
+  Rendered purchases/new.html.erb within layouts/application (Duration: 39.0ms | Allocations: 3016)
+  Rendered layout layouts/application.html.erb (Duration: 63.4ms | Allocations: 4984)
+Completed 200 OK in 104ms (Views: 65.2ms | ActiveRecord: 2.3ms | Allocations: 9426)
+
+
+Started POST "/categories/1/purchases" for 127.0.0.1 at 2023-11-13 15:10:15 +0000
+Processing by PurchasesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category_id"=>"1", "purchase"=>{"name"=>"transaction", "amount"=>"4", "category_ids"=>["1"]}, "commit"=>"Add Purchase"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameter: :category_ids. Context: { controller: PurchasesController, action: create, request: #<ActionDispatch::Request:0x0000000111067630>, params: {"authenticity_token"=>"[FILTERED]", "category_id"=>"1", "purchase"=>{"name"=>"transaction", "amount"=>"4", "category_ids"=>["1"]}, "commit"=>"Add Purchase", "controller"=>"purchases", "action"=>"create"} }[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/purchases_controller.rb:20:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:20:in `create'
+  [1m[36mPurchase Create (1.2ms)[0m  [1m[32mINSERT INTO "purchases" ("name", "amount", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "transaction"], ["amount", "4.0"], ["author_id", 1], ["created_at", "2023-11-13 15:10:16.069078"], ["updated_at", "2023-11-13 15:10:16.069078"]]
+  ↳ app/controllers/purchases_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (65.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/purchases_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/purchases_controller.rb:24:in `block in create'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:24:in `block in create'
+  [1m[36mPurchase Load (0.3ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:24:in `block in create'
+  [1m[36mCategoryPurchase Create (0.8ms)[0m  [1m[32mINSERT INTO "category_purchases" ("category_id", "purchase_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 1], ["purchase_id", 3], ["created_at", "2023-11-13 15:10:16.155574"], ["updated_at", "2023-11-13 15:10:16.155574"]]
+  ↳ app/controllers/purchases_controller.rb:24:in `block in create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/purchases_controller.rb:24:in `block in create'
+Redirected to http://127.0.0.1:3000/categories/1
+Completed 302 Found in 112ms (ActiveRecord: 70.3ms | Allocations: 12135)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2023-11-13 15:10:16 +0000
+Processing by CategoriesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  [1m[36mCategoryPurchase Load (0.3ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  [1m[36mPurchase Load (0.5ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" IN ($1, $2)[0m  [["id", 2], ["id", 3]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 273)
+  Rendered layout layouts/application.html.erb (Duration: 31.8ms | Allocations: 2207)
+Completed 200 OK in 49ms (Views: 32.6ms | ActiveRecord: 1.4ms | Allocations: 6487)
+
+
+Started GET "/categories/1/purchases/new" for 127.0.0.1 at 2023-11-13 15:10:20 +0000
+Processing by PurchasesController#new as HTML
+  Parameters: {"category_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:11:in `new'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:12:in `new'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/purchases_controller.rb:12:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering purchases/new.html.erb within layouts/application
+  Rendered purchases/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 744)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 2676)
+Completed 200 OK in 28ms (Views: 7.9ms | ActiveRecord: 1.5ms | Allocations: 6217)
+
+
+Started GET "/categories" for 127.0.0.1 at 2023-11-13 15:10:22 +0000
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategoryPurchase Load (0.4ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mPurchase Load (0.4ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" IN ($1, $2)[0m  [["id", 2], ["id", 3]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 121)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 2058)
+Completed 200 OK in 25ms (Views: 6.1ms | ActiveRecord: 2.1ms | Allocations: 7083)
+
+
+Started GET "/wsx" for 127.0.0.1 at 2023-11-13 15:10:22 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/wsx"):
+  
+Started GET "/categories/new" for 127.0.0.1 at 2023-11-13 15:10:25 +0000
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2444)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 4413)
+Completed 200 OK in 18ms (Views: 11.1ms | ActiveRecord: 0.2ms | Allocations: 6155)
+
+
+Started GET "/categories/wsx" for 127.0.0.1 at 2023-11-13 15:10:25 +0000
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"wsx"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+Completed 404 Not Found in 8ms (ActiveRecord: 0.5ms | Allocations: 2541)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Category with 'id'=wsx):
+  
+app/controllers/categories_controller.rb:27:in `show'
+Started POST "/categories" for 127.0.0.1 at 2023-11-13 15:10:37 +0000
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"Automobile", "icon"=>"Icone", "commit"=>"Add Category"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: CategoriesController, action: create, request: #<ActionDispatch::Request:0x0000000111165a00>, params: {"authenticity_token"=>"[FILTERED]", "name"=>"Automobile", "icon"=>"Icone", "commit"=>"Add Category", "controller"=>"categories", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:38:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:38:in `create'
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Automobile"], ["icon", "Icone"], ["user_id", 1], ["created_at", "2023-11-13 15:10:37.341382"], ["updated_at", "2023-11-13 15:10:37.341382"]]
+  ↳ app/controllers/categories_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:38:in `create'
+Redirected to http://127.0.0.1:3000/categories
+Completed 302 Found in 20ms (ActiveRecord: 2.1ms | Allocations: 5267)
+
+
+Started GET "/categories" for 127.0.0.1 at 2023-11-13 15:10:37 +0000
+Processing by CategoriesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategoryPurchase Load (0.6ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" IN ($1, $2)[0m  [["category_id", 1], ["category_id", 2]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mPurchase Load (0.4ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" IN ($1, $2)[0m  [["id", 2], ["id", 3]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 173)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 2144)
+Completed 200 OK in 29ms (Views: 7.8ms | ActiveRecord: 1.9ms | Allocations: 7296)
+
+
+Started GET "/wsx" for 127.0.0.1 at 2023-11-13 15:10:37 +0000
+Started GET "/Icone" for 127.0.0.1 at 2023-11-13 15:10:37 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/wsx"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/Icone"):
+  
+Started GET "/categories/new" for 127.0.0.1 at 2023-11-13 15:11:08 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/new.html.erb within layouts/application (Duration: 64.9ms | Allocations: 3208)
+Started GET "/users/sign_out" for 127.0.0.1 at 2023-11-13 15:11:09 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 293ms (ActiveRecord: 26.4ms | Allocations: 22680)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-13 15:11:10 +0000
+Processing by StaticPagesController#splash as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/splash.html.erb within layouts/application
+  Rendered static_pages/splash.html.erb within layouts/application (Duration: 1.5ms | Allocations: 242)
+  Rendered layout layouts/application.html.erb (Duration: 1345.0ms | Allocations: 41960)
+Completed 200 OK in 2027ms (Views: 1463.3ms | ActiveRecord: 41.4ms | Allocations: 69437)
+
+
+  Rendered layout layouts/application.html.erb (Duration: 216.5ms | Allocations: 37460)
+Completed 200 OK in 264ms (Views: 261.4ms | ActiveRecord: 0.0ms | Allocations: 38525)
+
+
+Started GET "/users/wsx" for 127.0.0.1 at 2023-11-13 15:11:11 +0000
+Started GET "/users/Icone" for 127.0.0.1 at 2023-11-13 15:11:11 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/users/Icone"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users/wsx"):
+  
