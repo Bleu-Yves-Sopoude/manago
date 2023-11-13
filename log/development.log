@@ -1,0 +1,1159 @@
+Started GET "/" for 127.0.0.1 at 2023-11-13 12:01:55 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20231113115630_devise_create_users.rb
+
+
+):
+  
+activerecord (7.1.2) lib/active_record/migration.rb:754:in `check_pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:643:in `block (2 levels) in call'
+activesupport (7.1.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.2) lib/active_record/migration.rb:648:in `block in call'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `synchronize'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.2) lib/rails/engine.rb:529:in `call'
+puma (6.4.0) lib/puma/configuration.rb:272:in `call'
+puma (6.4.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.0) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.0) lib/puma/server.rb:443:in `process_client'
+puma (6.4.0) lib/puma/server.rb:241:in `block in run'
+puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started POST "/rails/actions" for 127.0.0.1 at 2023-11-13 12:02:02 +0000
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2207554510023681105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to DeviseCreateUsers (20231113115630)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (204.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(2207554510023681105)[0m
+  
+StandardError (An error has occurred, this and all later migrations canceled:
+
+PG::DuplicateTable: ERROR:  relation "users" already exists
+):
+  
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2207554510023681105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (29.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2207554510023681105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-11-13 12:03:50 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#splash as HTML
+Completed 500 Internal Server Error in 160ms (ActiveRecord: 0.0ms | Allocations: 4066)
+
+
+  
+ActionView::MissingTemplate (Missing template static_pages/splash, application/splash with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/mrblue/Desktop/manago/app/views"
+  * "/Users/mrblue/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/turbo-rails-1.5.0/app/views"
+  * "/Users/mrblue/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/devise-4.9.3/app/views"
+  * "/Users/mrblue/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actiontext-7.1.2/app/views"
+  * "/Users/mrblue/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actionmailbox-7.1.2/app/views"
+):
+  
+app/controllers/static_pages_controller.rb:3:in `splash'
+Started GET "/" for 127.0.0.1 at 2023-11-13 12:07:01 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20231113115630_devise_create_users.rb
+
+
+):
+  
+activerecord (7.1.2) lib/active_record/migration.rb:754:in `check_pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:643:in `block (2 levels) in call'
+activesupport (7.1.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.2) lib/active_record/migration.rb:648:in `block in call'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `synchronize'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.2) lib/rails/engine.rb:529:in `call'
+puma (6.4.0) lib/puma/configuration.rb:272:in `call'
+puma (6.4.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.0) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.0) lib/puma/server.rb:443:in `process_client'
+puma (6.4.0) lib/puma/server.rb:241:in `block in run'
+puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started POST "/rails/actions" for 127.0.0.1 at 2023-11-13 12:07:06 +0000
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2207554510023681105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to DeviseCreateUsers (20231113115630)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (170.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2207554510023681105)[0m
+  
+StandardError (An error has occurred, this and all later migrations canceled:
+
+PG::DuplicateTable: ERROR:  relation "users" already exists
+):
+  
+Started POST "/rails/actions" for 127.0.0.1 at 2023-11-13 12:07:26 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2207554510023681105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(2207554510023681105)[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-11-13 12:07:26 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (23.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#splash as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/splash.html.erb within layouts/application
+  Rendered static_pages/splash.html.erb within layouts/application (Duration: 2.6ms | Allocations: 302)
+  Rendered layout layouts/application.html.erb (Duration: 928.9ms | Allocations: 98130)
+Completed 200 OK in 1001ms (Views: 972.7ms | ActiveRecord: 0.0ms | Allocations: 99968)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-13 12:07:30 +0000
+  
+ActionController::RoutingError (uninitialized constant Users):
+  
+Started GET "/" for 127.0.0.1 at 2023-11-13 12:07:35 +0000
+Processing by StaticPagesController#splash as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/splash.html.erb within layouts/application
+  Rendered static_pages/splash.html.erb within layouts/application (Duration: 0.3ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 2189)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.0ms | Allocations: 2423)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-11-13 12:07:36 +0000
+  
+ActionController::RoutingError (uninitialized constant Users):
+  
+Started GET "/" for 127.0.0.1 at 2023-11-13 12:07:38 +0000
+Processing by StaticPagesController#splash as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/splash.html.erb within layouts/application
+  Rendered static_pages/splash.html.erb within layouts/application (Duration: 0.9ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 2228)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 2463)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-13 13:34:13 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#splash as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/splash.html.erb within layouts/application
+  Rendered static_pages/splash.html.erb within layouts/application (Duration: 1.7ms | Allocations: 430)
+  Rendered layout layouts/application.html.erb (Duration: 1591.2ms | Allocations: 36117)
+Completed 200 OK in 1848ms (Views: 1770.9ms | ActiveRecord: 0.0ms | Allocations: 40444)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-13 13:34:19 +0000
+  
+ActionController::RoutingError (uninitialized constant Users):
+  
+Started GET "/" for 127.0.0.1 at 2023-11-13 13:34:21 +0000
+Processing by StaticPagesController#splash as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/splash.html.erb within layouts/application
+  Rendered static_pages/splash.html.erb within layouts/application (Duration: 0.8ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 2166)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 2405)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-11-13 13:34:22 +0000
+  
+ActionController::RoutingError (uninitialized constant Users):
+  
+Started GET "/" for 127.0.0.1 at 2023-11-13 13:34:25 +0000
+Processing by StaticPagesController#splash as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/splash.html.erb within layouts/application
+  Rendered static_pages/splash.html.erb within layouts/application (Duration: 0.8ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 2193)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 2427)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-13 13:34:27 +0000
+  
+ActionController::RoutingError (uninitialized constant Users):
+  
+Started GET "/" for 127.0.0.1 at 2023-11-13 13:34:29 +0000
+Processing by StaticPagesController#splash as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/splash.html.erb within layouts/application
+  Rendered static_pages/splash.html.erb within layouts/application (Duration: 0.4ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 27.0ms | Allocations: 2209)
+Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 0.0ms | Allocations: 2449)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-11-13 13:34:30 +0000
+  
+ActionController::RoutingError (uninitialized constant Users):
+  
+Started GET "/" for 127.0.0.1 at 2023-11-13 13:35:31 +0000
+Processing by StaticPagesController#splash as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/splash.html.erb within layouts/application
+  Rendered static_pages/splash.html.erb within layouts/application (Duration: 0.3ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 46.8ms | Allocations: 2186)
+Completed 200 OK in 49ms (Views: 48.0ms | ActiveRecord: 0.0ms | Allocations: 2420)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-11-13 13:35:33 +0000
+  
+ActionController::RoutingError (uninitialized constant Users):
+  
+Started GET "/" for 127.0.0.1 at 2023-11-13 13:35:36 +0000
+Processing by StaticPagesController#splash as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/splash.html.erb within layouts/application
+  Rendered static_pages/splash.html.erb within layouts/application (Duration: 0.4ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 2202)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 2436)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-13 13:35:38 +0000
+  
+ActionController::RoutingError (uninitialized constant Users):
+  
+Started GET "/" for 127.0.0.1 at 2023-11-13 14:05:10 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 5 pending migrations:
+
+db/migrate/20231108182052_create_users.rb
+db/migrate/20231108182213_create_categories.rb
+db/migrate/20231108182601_create_purchases.rb
+db/migrate/20231108182837_create_category_purchase.rb
+db/migrate/20231108192038_add_devise_to_users.rb
+
+
+):
+  
+activerecord (7.1.2) lib/active_record/migration.rb:754:in `check_pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:643:in `block (2 levels) in call'
+activesupport (7.1.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.2) lib/active_record/migration.rb:648:in `block in call'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `synchronize'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.2) lib/rails/engine.rb:529:in `call'
+puma (6.4.0) lib/puma/configuration.rb:272:in `call'
+puma (6.4.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.0) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.0) lib/puma/server.rb:443:in `process_client'
+puma (6.4.0) lib/puma/server.rb:241:in `block in run'
+puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started POST "/rails/actions" for 127.0.0.1 at 2023-11-13 14:05:14 +0000
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2207554510023681105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateUsers (20231108182052)
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (280.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2207554510023681105)[0m
+  
+StandardError (An error has occurred, this and all later migrations canceled:
+
+PG::DuplicateTable: ERROR:  relation "users" already exists
+):
+  
+Started POST "/rails/actions" for 127.0.0.1 at 2023-11-13 14:05:46 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2207554510023681105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2207554510023681105)[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-11-13 14:05:46 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (18.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#splash as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/splash.html.erb within layouts/application
+  Rendered static_pages/splash.html.erb within layouts/application (Duration: 2.5ms | Allocations: 306)
+  Rendered layout layouts/application.html.erb (Duration: 713.7ms | Allocations: 35950)
+Completed 200 OK in 773ms (Views: 743.5ms | ActiveRecord: 0.0ms | Allocations: 37790)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-13 14:05:50 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 227)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 80.4ms | Allocations: 3750)
+  Rendered layout layouts/application.html.erb (Duration: 80.9ms | Allocations: 3842)
+Completed 500 Internal Server Error in 223ms (ActiveRecord: 5.2ms | Allocations: 16618)
+
+
+  
+ActionView::Template::Error (undefined method `email' for #<User id: nil, name: nil, photo: nil, bio: nil, post_counter: 0, created_at: nil, updated_at: nil>):
+     6: 
+     7:       <div class="form-group">
+     8:         <%= f.label :email %>
+     9:         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+    10:       </div>
+    11: 
+    12:       <div class="form-group">
+  
+app/views/devise/sessions/new.html.erb:9
+app/views/devise/sessions/new.html.erb:3
+Started GET "/" for 127.0.0.1 at 2023-11-13 14:06:04 +0000
+Processing by StaticPagesController#splash as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/splash.html.erb within layouts/application
+  Rendered static_pages/splash.html.erb within layouts/application (Duration: 0.3ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 2211)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 2451)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-11-13 14:06:06 +0000
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1902)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 1993)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 0.0ms | Allocations: 3102)
+
+
+  
+ActionView::Template::Error (undefined method `email' for #<User id: nil, name: nil, photo: nil, bio: nil, post_counter: 0, created_at: nil, updated_at: nil>):
+     6: 
+     7:       <div class="form-group">
+     8:         <%= f.label :email %>
+     9:         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+    10:       </div>
+    11: 
+    12:       <div class="form-group">
+  
+app/views/devise/registrations/new.html.erb:9
+app/views/devise/registrations/new.html.erb:3
+  [1m[35m (33.1ms)[0m  [1m[35mCREATE DATABASE "manago_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE "manago_test" ENCODING = 'unicode'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2207554510023681105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateUsers (20231108182052)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (109.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (42.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231108182052') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategories (20231108182213)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (68.1ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "icone" character varying, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_b8e2f7adfc"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (45.3ms)[0m  [1m[35mCREATE INDEX "index_categories_on_user_id" ON "categories" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231108182213') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePurchases (20231108182601)
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.1ms)[0m  [1m[35mCREATE TABLE "purchases" ("id" bigserial primary key, "name" character varying, "amount" decimal, "author_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_1ad2b8d50e"
+FOREIGN KEY ("author_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE INDEX "index_purchases_on_author_id" ON "purchases" ("author_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231108182601') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategoryPurchase (20231108182837)
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.2ms)[0m  [1m[35mCREATE TABLE "category_purchases" ("id" bigserial primary key, "category_id" bigint NOT NULL, "purchase_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_deee3fdcc8"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+, CONSTRAINT "fk_rails_cf72359307"
+FOREIGN KEY ("purchase_id")
+  REFERENCES "purchases" ("id")
+)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_category_purchases_on_category_id" ON "category_purchases" ("category_id")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE INDEX "index_category_purchases_on_purchase_id" ON "category_purchases" ("purchase_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231108182837') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDeviseToUsers (20231108192038)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (63.9ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp(6)[0m
+  [1m[35m (40.6ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" timestamp(6)[0m
+  [1m[35m (39.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (50.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231108192038') RETURNING "version"[0m
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(2207554510023681105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-11-13 14:11:32 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#splash as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/splash.html.erb within layouts/application
+  Rendered static_pages/splash.html.erb within layouts/application (Duration: 2.9ms | Allocations: 435)
+  Rendered layout layouts/application.html.erb (Duration: 381.0ms | Allocations: 36092)
+Completed 200 OK in 459ms (Views: 453.6ms | ActiveRecord: 0.0ms | Allocations: 40409)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-11-13 14:11:36 +0000
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.2ms | Allocations: 231)
+  Rendered devise/shared/_links.html.erb (Duration: 2.3ms | Allocations: 585)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 190.9ms | Allocations: 3848)
+  Rendered layout layouts/application.html.erb (Duration: 196.2ms | Allocations: 5862)
+Completed 200 OK in 362ms (Views: 211.3ms | ActiveRecord: 82.8ms | Allocations: 23286)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-13 14:11:41 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 243)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1276)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 3211)
+Completed 200 OK in 56ms (Views: 25.9ms | ActiveRecord: 0.0ms | Allocations: 4564)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-11-13 14:11:48 +0000
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 127)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1194)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 3130)
+Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 0.0ms | Allocations: 3724)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-11-13 14:12:06 +0000
+Processing by Users::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"mailo@gmail.com", "name"=>"mailo", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (81.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mailo@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "mailo"], ["created_at", "2023-11-13 14:12:07.144401"], ["updated_at", "2023-11-13 14:12:07.144401"], ["email", "mailo@gmail.com"], ["encrypted_password", "$2a$12$hZq/Qa1DT1a2EHwRhQ6OGOiraFOHH7EJrIW/a/Kof55gwrG017JRy"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/categories
+Completed 303 See Other in 1116ms (ActiveRecord: 83.5ms | Allocations: 14118)
+
+
+Started GET "/categories" for 127.0.0.1 at 2023-11-13 14:12:07 +0000
+Processing by CategoriesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.5ms | Allocations: 2353)
+
+
+  
+NameError (uninitialized constant CategoriesController::Ability):
+  
+app/controllers/categories_controller.rb:6:in `set_ability'
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-11-13 14:16:43 +0000
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/categories
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 1.1ms | Allocations: 1620)
+
+
+Started GET "/categories" for 127.0.0.1 at 2023-11-13 14:16:43 +0000
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms | Allocations: 1886)
+
+
+  
+NameError (uninitialized constant CategoriesController::Ability):
+  
+app/controllers/categories_controller.rb:6:in `set_ability'
+Started GET "/" for 127.0.0.1 at 2023-11-13 14:23:30 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#splash as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/splash.html.erb within layouts/application
+  Rendered static_pages/splash.html.erb within layouts/application (Duration: 4.7ms | Allocations: 435)
+  Rendered layout layouts/application.html.erb (Duration: 826.2ms | Allocations: 35882)
+Completed 200 OK in 936ms (Views: 898.1ms | ActiveRecord: 0.0ms | Allocations: 40192)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-11-13 14:23:37 +0000
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (19.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/categories
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 182ms (ActiveRecord: 38.3ms | Allocations: 20720)
+
+
+Started GET "/categories" for 127.0.0.1 at 2023-11-13 14:23:37 +0000
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategory Load (36.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 409)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 2362)
+Completed 200 OK in 406ms (Views: 12.8ms | ActiveRecord: 42.0ms | Allocations: 18832)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2023-11-13 14:23:41 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 55ms (ActiveRecord: 0.3ms | Allocations: 3016)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-13 14:23:41 +0000
+Processing by StaticPagesController#splash as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/splash.html.erb within layouts/application
+  Rendered static_pages/splash.html.erb within layouts/application (Duration: 0.3ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2201)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 2437)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-11-13 14:23:44 +0000
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 231)
+  Rendered devise/shared/_links.html.erb (Duration: 3.8ms | Allocations: 586)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 492.5ms | Allocations: 3652)
+  Rendered layout layouts/application.html.erb (Duration: 499.0ms | Allocations: 5700)
+Completed 200 OK in 631ms (Views: 578.8ms | ActiveRecord: 0.0ms | Allocations: 7109)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-11-13 14:23:47 +0000
+Processing by Users::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "name"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 3.5ms | Allocations: 1110)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 127)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 12.7ms | Allocations: 3421)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 5356)
+Completed 422 Unprocessable Entity in 36ms (Views: 18.3ms | ActiveRecord: 0.0ms | Allocations: 8306)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-13 14:23:49 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 243)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1276)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 3211)
+Completed 200 OK in 57ms (Views: 20.4ms | ActiveRecord: 0.0ms | Allocations: 4422)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-11-13 14:23:59 +0000
+Processing by Users::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"mailo@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "mailo@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/categories
+Completed 303 See Other in 432ms (ActiveRecord: 0.7ms | Allocations: 3497)
+
+
+Started GET "/categories" for 127.0.0.1 at 2023-11-13 14:24:00 +0000
+Processing by CategoriesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 65)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2007)
+Completed 200 OK in 16ms (Views: 5.9ms | ActiveRecord: 1.2ms | Allocations: 5223)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2023-11-13 14:24:02 +0000
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2478)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 4414)
+Completed 200 OK in 18ms (Views: 9.2ms | ActiveRecord: 0.5ms | Allocations: 6131)
+
+
+Started POST "/categories" for 127.0.0.1 at 2023-11-13 14:24:08 +0000
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"dssf", "icon"=>"dsds", "commit"=>"Add Category"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: CategoriesController, action: create, request: #<ActionDispatch::Request:0x000000010a105fa8>, params: {"authenticity_token"=>"[FILTERED]", "name"=>"dssf", "icon"=>"dsds", "commit"=>"Add Category", "controller"=>"categories", "action"=>"create"} }[0m
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.3ms | Allocations: 6407)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'icon' for Category.):
+  
+app/controllers/categories_controller.rb:36:in `create'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2207554510023681105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to ChangeIconColumnName (20231113142558)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (50.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231113142558') RETURNING "version"[0m
+  [1m[36mTRANSACTION (62.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(2207554510023681105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (5098.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "manago_development"[0m
+Started GET "/" for 127.0.0.1 at 2023-11-13 14:28:23 +0000
+Started GET "/" for 127.0.0.1 at 2023-11-13 14:28:23 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#splash as HTML
+Processing by StaticPagesController#splash as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/splash.html.erb within layouts/application
+  Rendered static_pages/splash.html.erb within layouts/application (Duration: 1.6ms | Allocations: 435)
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/splash.html.erb within layouts/application
+  Rendered static_pages/splash.html.erb within layouts/application (Duration: 0.8ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 736.2ms | Allocations: 64085)
+Completed 200 OK in 816ms (Views: 809.3ms | ActiveRecord: 0.0ms | Allocations: 69495)
+
+
+  Rendered layout layouts/application.html.erb (Duration: 740.8ms | Allocations: 65078)
+Completed 200 OK in 857ms (Views: 850.9ms | ActiveRecord: 0.0ms | Allocations: 70370)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-11-13 14:28:27 +0000
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/categories
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 138ms (ActiveRecord: 17.1ms | Allocations: 20746)
+
+
+Started GET "/categories" for 127.0.0.1 at 2023-11-13 14:28:27 +0000
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 410)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 2402)
+Completed 200 OK in 185ms (Views: 32.3ms | ActiveRecord: 4.7ms | Allocations: 13787)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2023-11-13 14:28:30 +0000
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/new.html.erb within layouts/application (Duration: 28.9ms | Allocations: 2925)
+  Rendered layout layouts/application.html.erb (Duration: 33.6ms | Allocations: 4861)
+Completed 200 OK in 44ms (Views: 34.3ms | ActiveRecord: 0.5ms | Allocations: 6598)
+
+
+Started POST "/categories" for 127.0.0.1 at 2023-11-13 14:28:35 +0000
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"ggvnbn", "icon"=>"f", "commit"=>"Add Category"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: CategoriesController, action: create, request: #<ActionDispatch::Request:0x0000000118c1f700>, params: {"authenticity_token"=>"[FILTERED]", "name"=>"ggvnbn", "icon"=>"f", "commit"=>"Add Category", "controller"=>"categories", "action"=>"create"} }[0m
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.6ms | Allocations: 6487)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'icon' for Category.):
+  
+app/controllers/categories_controller.rb:36:in `create'
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (5050.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "manago_development"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (27.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (22.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (185.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "manago_development"[0m
+  [1m[35m (35.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "manago_test"[0m
+  [1m[35m (2669.2ms)[0m  [1m[35mCREATE DATABASE "manago_development" ENCODING = 'unicode'[0m
+  [1m[35m (308.1ms)[0m  [1m[35mCREATE DATABASE "manago_test" ENCODING = 'unicode'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2207554510023681105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (1.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2023-11-13 14:38:21.740204', '2023-11-13 14:38:21.740210') RETURNING "key"[0m
+Migrating to CreateUsers (20231108182052)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (49.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(2207554510023681105)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2207554510023681105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateUsers (20231108182052)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (30.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231108182052') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategories (20231108182213)
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.3ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "icon" character varying, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_b8e2f7adfc"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE INDEX "index_categories_on_user_id" ON "categories" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231108182213') RETURNING "version"[0m
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePurchases (20231108182601)
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "purchases" ("id" bigserial primary key, "name" character varying, "amount" decimal, "author_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_1ad2b8d50e"
+FOREIGN KEY ("author_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_purchases_on_author_id" ON "purchases" ("author_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231108182601') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategoryPurchase (20231108182837)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE TABLE "category_purchases" ("id" bigserial primary key, "category_id" bigint NOT NULL, "purchase_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_deee3fdcc8"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+, CONSTRAINT "fk_rails_cf72359307"
+FOREIGN KEY ("purchase_id")
+  REFERENCES "purchases" ("id")
+)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE INDEX "index_category_purchases_on_category_id" ON "category_purchases" ("category_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_category_purchases_on_purchase_id" ON "category_purchases" ("purchase_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231108182837') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDeviseToUsers (20231108192038)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp(6)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" timestamp(6)[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231108192038') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(2207554510023681105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-11-13 14:40:06 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#splash as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/splash.html.erb within layouts/application
+  Rendered static_pages/splash.html.erb within layouts/application (Duration: 2.3ms | Allocations: 435)
+  Rendered layout layouts/application.html.erb (Duration: 655.6ms | Allocations: 36005)
+Completed 200 OK in 940ms (Views: 923.1ms | ActiveRecord: 0.0ms | Allocations: 40315)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-11-13 14:40:10 +0000
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (119.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.6ms | Allocations: 231)
+  Rendered devise/shared/_links.html.erb (Duration: 2.9ms | Allocations: 691)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 121.0ms | Allocations: 3297)
+  Rendered layout layouts/application.html.erb (Duration: 128.3ms | Allocations: 5307)
+Completed 200 OK in 754ms (Views: 187.9ms | ActiveRecord: 137.3ms | Allocations: 26926)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-11-13 14:40:14 +0000
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 139)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1750)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 3689)
+Completed 200 OK in 25ms (Views: 22.3ms | ActiveRecord: 0.0ms | Allocations: 4825)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-11-13 14:40:39 +0000
+Processing by Users::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"mailot@gmail.com", "name"=>"MAITO", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (4.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mailot@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (78.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "MAITO"], ["created_at", "2023-11-13 14:40:40.128654"], ["updated_at", "2023-11-13 14:40:40.128654"], ["email", "mailot@gmail.com"], ["encrypted_password", "$2a$12$Pc2Spxh.427st1cDpbPDh.b47E4cncXxEx6r90p/owbkMU4b25l.."], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (58.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/categories
+Completed 303 See Other in 894ms (ActiveRecord: 141.0ms | Allocations: 9103)
+
+
+Started GET "/categories" for 127.0.0.1 at 2023-11-13 14:40:40 +0000
+Processing by CategoriesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategory Load (12.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 396)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 2385)
+Completed 200 OK in 135ms (Views: 11.6ms | ActiveRecord: 17.5ms | Allocations: 13827)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2023-11-13 14:40:42 +0000
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2478)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 4414)
+Completed 200 OK in 16ms (Views: 8.5ms | ActiveRecord: 0.5ms | Allocations: 6168)
+
+
+Started POST "/categories" for 127.0.0.1 at 2023-11-13 14:40:45 +0000
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"wds", "icon"=>"wsx", "commit"=>"Add Category"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: CategoriesController, action: create, request: #<ActionDispatch::Request:0x0000000116343020>, params: {"authenticity_token"=>"[FILTERED]", "name"=>"wds", "icon"=>"wsx", "commit"=>"Add Category", "controller"=>"categories", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:38:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:38:in `create'
+  [1m[36mCategory Create (261.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "icon", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "wds"], ["icon", "wsx"], ["user_id", 1], ["created_at", "2023-11-13 14:40:45.822250"], ["updated_at", "2023-11-13 14:40:45.822250"]]
+  ↳ app/controllers/categories_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (44.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:38:in `create'
+Redirected to http://127.0.0.1:3000/categories
+Completed 302 Found in 830ms (ActiveRecord: 306.8ms | Allocations: 11881)
+
+
+Started GET "/categories" for 127.0.0.1 at 2023-11-13 14:40:46 +0000
+Processing by CategoriesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategoryPurchase Load (61.3ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (Duration: 47.5ms | Allocations: 146)
+  Rendered layout layouts/application.html.erb (Duration: 54.9ms | Allocations: 2084)
+Completed 200 OK in 311ms (Views: 56.1ms | ActiveRecord: 67.1ms | Allocations: 8713)
+
+
+Started GET "/wsx" for 127.0.0.1 at 2023-11-13 14:40:46 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/wsx"):
+  
+Started GET "/categories/1" for 127.0.0.1 at 2023-11-13 14:40:56 +0000
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  [1m[36mCategoryPurchase Load (0.3ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 17.0ms | Allocations: 677)
+  Rendered layout layouts/application.html.erb (Duration: 48.0ms | Allocations: 2644)
+Completed 200 OK in 88ms (Views: 49.5ms | ActiveRecord: 0.9ms | Allocations: 6107)
+
+
+Started GET "/categories/wsx" for 127.0.0.1 at 2023-11-13 14:40:56 +0000
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"wsx"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+Completed 404 Not Found in 10ms (ActiveRecord: 0.8ms | Allocations: 2583)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Category with 'id'=wsx):
+  
+app/controllers/categories_controller.rb:27:in `show'
+Started GET "/wsx" for 127.0.0.1 at 2023-11-13 14:40:58 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/wsx"):
+  
+Started GET "/categories/1" for 127.0.0.1 at 2023-11-13 14:41:00 +0000
+Started GET "/categories/wsx" for 127.0.0.1 at 2023-11-13 14:41:00 +0000
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  [1m[36mCategoryPurchase Load (0.6ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 232)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 2238)
+Completed 200 OK in 24ms (Views: 9.2ms | ActiveRecord: 1.3ms | Allocations: 5705)
+
+
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"wsx"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+Completed 404 Not Found in 11ms (ActiveRecord: 0.7ms | Allocations: 2549)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Category with 'id'=wsx):
+  
+app/controllers/categories_controller.rb:27:in `show'
+Started GET "/categories/1/purchases/new" for 127.0.0.1 at 2023-11-13 14:41:02 +0000
+Processing by PurchasesController#new as HTML
+  Parameters: {"category_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:11:in `new'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:12:in `new'
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/purchases_controller.rb:12:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering purchases/new.html.erb within layouts/application
+  Rendered purchases/new.html.erb within layouts/application (Duration: 63.5ms | Allocations: 2586)
+  Rendered layout layouts/application.html.erb (Duration: 70.5ms | Allocations: 4555)
+Completed 200 OK in 139ms (Views: 73.7ms | ActiveRecord: 7.4ms | Allocations: 13480)
+
+
+Started POST "/categories/1/purchases" for 127.0.0.1 at 2023-11-13 14:41:09 +0000
+Processing by PurchasesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category_id"=>"1", "purchase"=>{"name"=>"3re", "amount"=>"22"}, "commit"=>"Add Purchase"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/purchases_controller.rb:20:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:20:in `create'
+  [1m[36mPurchase Create (29.8ms)[0m  [1m[32mINSERT INTO "purchases" ("name", "amount", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "3re"], ["amount", "22.0"], ["author_id", 1], ["created_at", "2023-11-13 14:41:09.460082"], ["updated_at", "2023-11-13 14:41:09.460082"]]
+  ↳ app/controllers/purchases_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/purchases_controller.rb:20:in `create'
+Redirected to http://127.0.0.1:3000/categories/1
+Completed 302 Found in 83ms (ActiveRecord: 31.8ms | Allocations: 6103)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2023-11-13 14:41:09 +0000
+Processing by CategoriesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  [1m[36mCategoryPurchase Load (0.4ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 232)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2166)
+Completed 200 OK in 18ms (Views: 5.7ms | ActiveRecord: 1.0ms | Allocations: 5531)
+
+
+Started GET "/categories/1/purchases/new" for 127.0.0.1 at 2023-11-13 14:41:11 +0000
+Processing by PurchasesController#new as HTML
+  Parameters: {"category_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:11:in `new'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:12:in `new'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/purchases_controller.rb:12:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering purchases/new.html.erb within layouts/application
+  Rendered purchases/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 744)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 2676)
+Completed 200 OK in 21ms (Views: 7.7ms | ActiveRecord: 1.2ms | Allocations: 6207)
+
+
+Started POST "/categories/1/purchases" for 127.0.0.1 at 2023-11-13 14:41:17 +0000
+Processing by PurchasesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category_id"=>"1", "purchase"=>{"name"=>"qwe", "amount"=>"3", "category_ids"=>["1"]}, "commit"=>"Add Purchase"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameter: :category_ids. Context: { controller: PurchasesController, action: create, request: #<ActionDispatch::Request:0x0000000115a85000>, params: {"authenticity_token"=>"[FILTERED]", "category_id"=>"1", "purchase"=>{"name"=>"qwe", "amount"=>"3", "category_ids"=>["1"]}, "commit"=>"Add Purchase", "controller"=>"purchases", "action"=>"create"} }[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/purchases_controller.rb:20:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:20:in `create'
+  [1m[36mPurchase Create (0.5ms)[0m  [1m[32mINSERT INTO "purchases" ("name", "amount", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "qwe"], ["amount", "3.0"], ["author_id", 1], ["created_at", "2023-11-13 14:41:17.605535"], ["updated_at", "2023-11-13 14:41:17.605535"]]
+  ↳ app/controllers/purchases_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/purchases_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/purchases_controller.rb:24:in `block in create'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:24:in `block in create'
+  [1m[36mPurchase Load (0.3ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:24:in `block in create'
+  [1m[36mCategoryPurchase Create (1.1ms)[0m  [1m[32mINSERT INTO "category_purchases" ("category_id", "purchase_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 1], ["purchase_id", 2], ["created_at", "2023-11-13 14:41:17.631820"], ["updated_at", "2023-11-13 14:41:17.631820"]]
+  ↳ app/controllers/purchases_controller.rb:24:in `block in create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/purchases_controller.rb:24:in `block in create'
+Redirected to http://127.0.0.1:3000/categories/1
+Completed 302 Found in 46ms (ActiveRecord: 6.2ms | Allocations: 13880)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2023-11-13 14:41:17 +0000
+Processing by CategoriesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  [1m[36mCategoryPurchase Load (0.3ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  [1m[36mPurchase Load (0.2ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 256)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 2190)
+Completed 200 OK in 39ms (Views: 9.1ms | ActiveRecord: 1.1ms | Allocations: 6481)
+
+
+Started GET "/categories/1/purchases/new" for 127.0.0.1 at 2023-11-13 14:41:21 +0000
+Processing by PurchasesController#new as HTML
+  Parameters: {"category_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:11:in `new'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:12:in `new'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/purchases_controller.rb:12:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering purchases/new.html.erb within layouts/application
+  Rendered purchases/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 744)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 2710)
+Completed 200 OK in 31ms (Views: 9.3ms | ActiveRecord: 1.0ms | Allocations: 6242)
+
+

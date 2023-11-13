@@ -1,0 +1,55 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-between bg-primary text-light align-items-center">
+    <%= link_to category_path(@category) do %>
+    <i class="bx bxs-chevron-left display-4 text-white"></i>
+    <% end %>
+    <h5 class="card-title">Add New Purchase</h5>
+  </div>
+
+  <%= form_with model: @purchase, url: category_purchases_path(@category), html: { class: 'card',id: 'purchase-form' } do |f| %>
+    <%= hidden_field_tag :category_id, @category.id %>
+
+    <div class="card-body">
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, autocomplete: "name", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :amount %>
+        <%= f.number_field :amount, autocomplete: "amount", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <label>Select Categories:</label>
+        <% @user.categories.each do |category| %>
+        <div class="form-check">
+          <%= f.check_box :category_ids, { multiple: true, class: 'form-check-input' }, category.id, nil %>
+          <%= label_tag nil, category.name, class: 'form-check-label' %>
+        </div>
+        <% end %>
+      </div>
+
+      <div class="text-center mt-4">
+        <%= f.submit "Add Purchase", class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+
+  <script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    const purchaseForm = document.querySelector('#new_purchase');
+
+    if (purchaseForm) {
+      purchaseForm.addEventListener('submit', function(event) {
+        const selectedCategories = document.querySelectorAll('input[type="checkbox"]:checked');
+
+        if (selectedCategories.length === 0) {
+          event.preventDefault();
+          alert("Please select at least one category.");
+        }
+      });
+    }
+  });
+</script>
+</div>

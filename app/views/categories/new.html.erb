@@ -1,0 +1,26 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-between bg-primary text-light align-items-center">
+    <%= link_to categories_path do %>
+      <i class="bx bxs-chevron-left display-4 text-white"></i>
+    <% end %>
+    <h5 class="card-title">Add New Category</h5>
+  </div>
+
+  <%= form_with model: @category, url: categories_path, html: { class: 'card' } do |f| %>
+    <div class="card-body">
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, autocomplete: "name", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :icon %>
+        <%= f.text_field :icon, autocomplete: "name", class: "form-control" %>
+      </div>
+
+      <div class="text-center mt-4">
+        <%= f.submit "Add Category", class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>
