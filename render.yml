@@ -1,0 +1,18 @@
+databases:
+  - name: manago
+    databaseName: manago
+    user: manago_user
+
+services:
+  - type: web
+    name: manago
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: manago
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false

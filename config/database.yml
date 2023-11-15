@@ -79,6 +79,4 @@ test:
 #
 production:
   <<: *default
-  database: manago_production
-  username: manago
-  password: <%= ENV["MANAGO_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
