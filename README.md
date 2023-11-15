@@ -1,10 +1,10 @@
-# Dinero
+# Managoo
 
 <a name="readme-top"></a>
 
 # 📗 Table of Contents
 
-- [Dinero](#dinero)
+- [Managoo](#managoo)
 - [📗 Table of Contents](#-table-of-contents)
 - [📖 Dinero ](#-dinero-)
   - [🛠 Built With ](#-built-with-)
@@ -16,6 +16,8 @@
     - [Usage](#usage)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
+  - [🚀 Live Demo ](#-live-demo-)
+  - [🎥 Video Demo](#-video-demo)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
   - [🙏 Acknowledgments ](#-acknowledgments-)
@@ -66,7 +68,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```sh
-  git clone https://github.com/Bleu-Yves-Sopoude/Dinero.git
+  git clone https://github.com/Bleu-Yves-Sopoude/manago.git
 ```
 
 ### Usage
@@ -74,7 +76,7 @@ Clone this repository to your desired folder:
 To run the project, execute the following command:
 
 ```sh
-  rails s Dineo.rb
+  rails s 
 ```
 
 <!-- AUTHORS -->
@@ -97,6 +99,19 @@ To run the project, execute the following command:
 
 - [ ] **Add UML Diagram**
 - [ ] **Adding  UI**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link](https://manage-oz9i.onrender.com)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🎥 Video Demo<a name="video-demo"></a>
+
+- [Video Demo Link]()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
