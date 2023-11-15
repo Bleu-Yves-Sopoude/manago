@@ -1822,3 +1822,45 @@ Processing by CategoriesController#new as HTML
 Completed 200 OK in 63ms (Views: 28.7ms | ActiveRecord: 4.6ms | Allocations: 25261)
 
 
+Started GET "/categories" for 127.0.0.1 at 2023-11-15 02:42:57 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 624)
+  Rendered layout layouts/application.html.erb (Duration: 154.1ms | Allocations: 34681)
+Completed 200 OK in 463ms (Views: 162.7ms | ActiveRecord: 27.2ms | Allocations: 70536)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2023-11-15 02:43:01 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 51ms (ActiveRecord: 0.3ms | Allocations: 3045)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 02:43:01 +0000
+Processing by StaticPagesController#splash as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/splash.html.erb within layouts/application
+  Rendered static_pages/splash.html.erb within layouts/application (Duration: 1.2ms | Allocations: 212)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 2386)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 2890)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-11-15 02:43:02 +0000
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.7ms | Allocations: 231)
+  Rendered devise/shared/_links.html.erb (Duration: 2.4ms | Allocations: 580)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 21.1ms | Allocations: 3652)
+  Rendered layout layouts/application.html.erb (Duration: 29.0ms | Allocations: 5670)
+Completed 200 OK in 45ms (Views: 36.8ms | ActiveRecord: 0.0ms | Allocations: 7186)
+
+
