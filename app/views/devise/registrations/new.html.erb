@@ -5,14 +5,16 @@
       <h2>Sign up</h2>
 
       <div class="form-group">
+        <%= f.label :full_name %>
+        <%= f.text_field :name, autocomplete: "name", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
         <%= f.label :email %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
       </div>
 
-      <div class="form-group">
-        <%= f.label :full_name %>
-        <%= f.text_field :name, autocomplete: "name", class: "form-control" %>
-      </div>
+      
 
       <div class="form-group">
         <%= f.label :password %>
