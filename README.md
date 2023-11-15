@@ -6,7 +6,7 @@
 
 - [Managoo](#managoo)
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Dinero ](#-dinero-)
+- [📖 Manago ](#-manago-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -23,9 +23,9 @@
   - [🙏 Acknowledgments ](#-acknowledgments-)
   - [📝 License ](#-license-)
 
-# 📖 Dinero <a name="about-project"></a>
+# 📖 Manago <a name="about-project"></a>
 
-**Dinero**  is a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
+**Manago**  is a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -111,7 +111,7 @@ To run the project, execute the following command:
 
 ## 🎥 Video Demo<a name="video-demo"></a>
 
-- [Video Demo Link]()
+- [Video Demo Link](https://www.loom.com/share/affc422f36414714be59b76fd4e3d280?sid=7d49db45-11ed-4f58-af8a-bb4934513fce)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
