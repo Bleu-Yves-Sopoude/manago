@@ -1,0 +1,39 @@
+<div class="container">
+
+<div class="d-flex justify-content-between">
+  <h3>All Categories</h3>
+ 
+  
+  <%= link_to 'Sign out', let_user_logout_path, method: :delete %>
+</div>
+
+  <div class="categories">
+    <% @user.categories.each_with_index do |cat, index|%>
+      <%= link_to category_path(cat) do %>
+        <div class="category card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="<%= cat.icon %>" class="img-fluid" alt="<%= cat.name %>" style="height: 100px; width:100px;">
+            </div>
+            <div class="col-md-8">
+            <div class="card-body text-dark">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title"><%= cat.name %></h5>
+              <p class="card-text">Amount: $<%= @totals[index] %></p>
+            </div>
+            <div>
+              <p class="card-text text-left"><%= cat.created_at.strftime("%d %B %Y") %></p>
+            </div>
+          </div>
+
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="text-center mt-3">
+  <%= link_to "ADD A NEW CATEGORY", new_category_path, class: 'btn-success green-button btn-block fixed-bottom border border-light text-white py-3' %>
+
+  </div>
+</div>
