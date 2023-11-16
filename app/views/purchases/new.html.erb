@@ -1,7 +1,7 @@
 <div class="container mt-5">
   <div class="d-flex justify-content-between bg-primary text-light align-items-center">
     <%= link_to category_path(@category) do %>
-    <i class="bx bxs-chevron-left display-4 text-white"></i>
+    <i class="bx bxs-chevron-left display-4 text-white"><</i>
     <% end %>
     <h5 class="card-title">Add New Purchase</h5>
   </div>
@@ -31,7 +31,7 @@
       </div>
 
       <div class="text-center mt-4">
-        <%= f.submit "Add Purchase", class: "btn btn-primary" %>
+        <%= f.submit "Add Purchase", class: 'btn-success green-button btn-block fixed-bottom border border-light text-white py-3' %>
       </div>
     </div>
   <% end %>

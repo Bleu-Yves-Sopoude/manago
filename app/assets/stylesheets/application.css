@@ -8,3 +8,13 @@
  *= require_self
  */
 @import 'https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css';
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css" rel="stylesheet">
+.arrow {
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;   /* Height of the arrow */
+    border-bottom: 20px solid transparent;   /* Height of the arrow */
+    border-right: 20px solid blue;   /* Width and color of the arrow */
+  }
+  

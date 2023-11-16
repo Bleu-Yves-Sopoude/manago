@@ -137,7 +137,7 @@ If you like this project please give it a star ⭐️.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I want to thank  Gregoire Vella on Behance for the Original design.
+Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

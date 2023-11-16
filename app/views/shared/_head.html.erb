@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <% if back %>
+      <%= link_to("javascript:history.back()", class: "navbar-text text-white text-2xl") do %>
+        <i class="fas fa-angle-left text-2xl text-white"></i>
+      <% end %>
+    <% else %>
+      <i class="fa-solid fa-bars text-2xl text-white"></i>
+    <% end %>
+
+    <h2 class="navbar-text text-2xl font-semibold text-white text-uppercase"><%= title %></h2>
+
+    <% if title == "categories" || title == "Expenses" %>
+      <%= link_to sign_out_user_path, class: "navbar-text text-white text-2xl" do %>
+        <i class="fa-solid fa-arrow-right-from-bracket" style="color: #fcfcfc;"></i>
+      <% end %>
+    <% elsif title == "register" %>
+      <%= link_to new_user_session_path, class: "navbar-text text-white text-2xl" do %>
+        <span class="font-normal">Next</span>
+      <% end %>
+    <% elsif title == "login" %>
+      <%= link_to new_user_registration_path, class: "navbar-text text-white text-2xl" do %>
+        <span class="fas fa-user-plus"></span>
+      <% end %>
+    <% else %>
+      <%= link_to sign_out_user_path, class: "navbar-text text-white text-2xl" do %>
+        <i class="fa-solid fa-arrow-right-from-bracket" style="color: #fcfcfc;"></i>
+      <% end %>
+    <% end %>
+  </div>
+</nav>
