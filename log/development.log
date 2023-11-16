@@ -6094,3 +6094,365 @@ Processing by CategoriesController#index as HTML
 Completed 200 OK in 42ms (Views: 10.9ms | ActiveRecord: 2.5ms | Allocations: 7295)
 
 
+Started GET "/categories/3" for 127.0.0.1 at 2023-11-16 15:41:29 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  [1m[36mCategoryPurchase Load (0.6ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  [1m[36mPurchase Load (0.8ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" IN ($1, $2, $3)[0m  [["id", 4], ["id", 5], ["id", 6]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 166.5ms | Allocations: 1104)
+Started GET "/categories/3/purchases/new" for 127.0.0.1 at 2023-11-16 15:41:31 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PurchasesController#new as HTML
+  Parameters: {"category_id"=>"3"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:11:in `new'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:12:in `new'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/purchases_controller.rb:12:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering purchases/new.html.erb within layouts/application
+  Rendered purchases/new.html.erb within layouts/application (Duration: 193.4ms | Allocations: 3619)
+  Rendered layout layouts/application.html.erb (Duration: 1207.7ms | Allocations: 41951)
+Completed 200 OK in 1902ms (Views: 1253.8ms | ActiveRecord: 37.2ms | Allocations: 93292)
+
+
+  Rendered layout layouts/application.html.erb (Duration: 329.6ms | Allocations: 37629)
+Completed 200 OK in 701ms (Views: 339.4ms | ActiveRecord: 32.4ms | Allocations: 81988)
+
+
+Started GET "/categories/3/purchases/new" for 127.0.0.1 at 2023-11-16 15:41:32 +0000
+Processing by PurchasesController#new as HTML
+  Parameters: {"category_id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:11:in `new'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/purchases_controller.rb:12:in `new'
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/purchases_controller.rb:12:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering purchases/new.html.erb within layouts/application
+  Rendered purchases/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 804)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 2738)
+Completed 200 OK in 44ms (Views: 15.2ms | ActiveRecord: 2.1ms | Allocations: 6286)
+
+
+Started GET "/categories/3" for 127.0.0.1 at 2023-11-16 15:41:54 +0000
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  [1m[36mCategoryPurchase Load (0.6ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  [1m[36mPurchase Load (0.7ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" IN ($1, $2, $3)[0m  [["id", 4], ["id", 5], ["id", 6]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 3.5ms | Allocations: 846)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 2828)
+Completed 200 OK in 89ms (Views: 10.1ms | ActiveRecord: 6.2ms | Allocations: 15279)
+
+
+Started GET "/categories" for 127.0.0.1 at 2023-11-16 15:46:23 +0000
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategoryPurchase Load (0.7ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" IN ($1, $2)[0m  [["category_id", 3], ["category_id", 4]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mPurchase Load (0.7ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" IN ($1, $2, $3)[0m  [["id", 4], ["id", 5], ["id", 6]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 550)
+  Rendered layout layouts/application.html.erb (Duration: 194.8ms | Allocations: 13831)
+Completed 200 OK in 581ms (Views: 214.8ms | ActiveRecord: 26.3ms | Allocations: 39236)
+
+
+Started GET "/categories" for 127.0.0.1 at 2023-11-16 15:46:30 +0000
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategoryPurchase Load (0.5ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" IN ($1, $2)[0m  [["category_id", 3], ["category_id", 4]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mPurchase Load (0.5ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" IN ($1, $2, $3)[0m  [["id", 4], ["id", 5], ["id", 6]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 175)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 2148)
+Completed 200 OK in 40ms (Views: 10.8ms | ActiveRecord: 2.0ms | Allocations: 7317)
+
+
+Started GET "/categories/3" for 127.0.0.1 at 2023-11-16 15:46:33 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  [1m[36mCategoryPurchase Load (0.6ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  [1m[36mPurchase Load (0.7ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" IN ($1, $2, $3)[0m  [["id", 4], ["id", 5], ["id", 6]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1104)
+  Rendered layout layouts/application.html.erb (Duration: 818.4ms | Allocations: 35465)
+Completed 200 OK in 1357ms (Views: 845.9ms | ActiveRecord: 34.5ms | Allocations: 86822)
+
+
+Started GET "/categories" for 127.0.0.1 at 2023-11-16 15:46:37 +0000
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategoryPurchase Load (0.4ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" IN ($1, $2)[0m  [["category_id", 3], ["category_id", 4]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mPurchase Load (0.4ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" IN ($1, $2, $3)[0m  [["id", 4], ["id", 5], ["id", 6]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 510)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 2449)
+Completed 200 OK in 46ms (Views: 11.0ms | ActiveRecord: 1.8ms | Allocations: 8881)
+
+
+Started GET "/categories/4" for 127.0.0.1 at 2023-11-16 15:46:39 +0000
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  [1m[36mCategoryPurchase Load (0.3ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" = $1[0m  [["category_id", 4]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 232)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2201)
+Completed 200 OK in 21ms (Views: 7.3ms | ActiveRecord: 1.0ms | Allocations: 5554)
+
+
+Started GET "/categories" for 127.0.0.1 at 2023-11-16 15:46:42 +0000
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategoryPurchase Load (0.4ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" IN ($1, $2)[0m  [["category_id", 3], ["category_id", 4]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mPurchase Load (0.5ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" IN ($1, $2, $3)[0m  [["id", 4], ["id", 5], ["id", 6]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 175)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 2114)
+Completed 200 OK in 31ms (Views: 8.8ms | ActiveRecord: 2.0ms | Allocations: 7300)
+
+
+Started GET "/categories" for 127.0.0.1 at 2023-11-16 15:48:08 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategoryPurchase Load (0.9ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" IN ($1, $2)[0m  [["category_id", 3], ["category_id", 4]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mPurchase Load (0.6ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" IN ($1, $2, $3)[0m  [["id", 4], ["id", 5], ["id", 6]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 867)
+Started GET "/categories/3" for 127.0.0.1 at 2023-11-16 15:48:10 +0000
+  Rendered layout layouts/application.html.erb (Duration: 920.1ms | Allocations: 35265)
+Completed 200 OK in 1832ms (Views: 962.9ms | ActiveRecord: 37.0ms | Allocations: 88545)
+
+
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  [1m[36mCategoryPurchase Load (0.3ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  [1m[36mPurchase Load (0.5ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" IN ($1, $2, $3)[0m  [["id", 4], ["id", 5], ["id", 6]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 716)
+  Rendered layout layouts/application.html.erb (Duration: 30.7ms | Allocations: 14046)
+Completed 200 OK in 113ms (Views: 33.3ms | ActiveRecord: 16.2ms | Allocations: 37460)
+
+
+Started GET "/categories/3" for 127.0.0.1 at 2023-11-16 15:48:12 +0000
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  [1m[36mCategoryPurchase Load (0.4ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  [1m[36mPurchase Load (0.9ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" IN ($1, $2, $3)[0m  [["id", 4], ["id", 5], ["id", 6]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 4.0ms | Allocations: 747)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 2682)
+Completed 200 OK in 39ms (Views: 13.2ms | ActiveRecord: 2.4ms | Allocations: 7059)
+
+
+Started GET "/categories" for 127.0.0.1 at 2023-11-16 15:48:14 +0000
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategoryPurchase Load (0.4ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" IN ($1, $2)[0m  [["category_id", 3], ["category_id", 4]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mPurchase Load (0.4ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" IN ($1, $2, $3)[0m  [["id", 4], ["id", 5], ["id", 6]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 175)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 2148)
+Completed 200 OK in 27ms (Views: 6.7ms | ActiveRecord: 2.1ms | Allocations: 7350)
+
+
+Started GET "/categories/4" for 127.0.0.1 at 2023-11-16 15:48:16 +0000
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  [1m[36mCategoryPurchase Load (0.4ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" = $1[0m  [["category_id", 4]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 232)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2167)
+Completed 200 OK in 44ms (Views: 6.0ms | ActiveRecord: 1.3ms | Allocations: 5504)
+
+
+Started GET "/categories" for 127.0.0.1 at 2023-11-16 15:48:18 +0000
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategoryPurchase Load (0.4ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" IN ($1, $2)[0m  [["category_id", 3], ["category_id", 4]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mPurchase Load (0.5ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" IN ($1, $2, $3)[0m  [["id", 4], ["id", 5], ["id", 6]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 175)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 2114)
+Completed 200 OK in 27ms (Views: 6.1ms | ActiveRecord: 1.9ms | Allocations: 7311)
+
+
+Started GET "/categories/4" for 127.0.0.1 at 2023-11-16 15:48:20 +0000
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  [1m[36mCategoryPurchase Load (0.4ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" = $1[0m  [["category_id", 4]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 232)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 2167)
+Completed 200 OK in 22ms (Views: 7.3ms | ActiveRecord: 1.0ms | Allocations: 5507)
+
+
+Started GET "/categories" for 127.0.0.1 at 2023-11-16 15:48:22 +0000
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategoryPurchase Load (0.4ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" IN ($1, $2)[0m  [["category_id", 3], ["category_id", 4]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mPurchase Load (0.4ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" IN ($1, $2, $3)[0m  [["id", 4], ["id", 5], ["id", 6]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 175)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2114)
+Completed 200 OK in 23ms (Views: 5.6ms | ActiveRecord: 1.8ms | Allocations: 7277)
+
+
+Started GET "/categories/3" for 127.0.0.1 at 2023-11-16 15:48:23 +0000
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  [1m[36mCategoryPurchase Load (9.8ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  [1m[36mPurchase Load (1.1ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" IN ($1, $2, $3)[0m  [["id", 4], ["id", 5], ["id", 6]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 294)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 2230)
+Completed 200 OK in 40ms (Views: 8.2ms | ActiveRecord: 12.2ms | Allocations: 6466)
+
+
+Started GET "/categories" for 127.0.0.1 at 2023-11-16 15:48:26 +0000
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mCategoryPurchase Load (0.5ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" IN ($1, $2)[0m  [["category_id", 3], ["category_id", 4]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  [1m[36mPurchase Load (0.5ms)[0m  [1m[34mSELECT "purchases".* FROM "purchases" WHERE "purchases"."id" IN ($1, $2, $3)[0m  [["id", 4], ["id", 5], ["id", 6]]
+  ↳ app/controllers/categories_controller.rb:12:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered categories/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 175)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 2114)
+Completed 200 OK in 37ms (Views: 9.6ms | ActiveRecord: 2.1ms | Allocations: 7302)
+
+
+Started GET "/categories/4" for 127.0.0.1 at 2023-11-16 15:48:28 +0000
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  [1m[36mCategoryPurchase Load (0.3ms)[0m  [1m[34mSELECT "category_purchases".* FROM "category_purchases" WHERE "category_purchases"."category_id" = $1[0m  [["category_id", 4]]
+  ↳ app/controllers/categories_controller.rb:27:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 232)
+  Rendered layout layouts/application.html.erb (Duration: 69.5ms | Allocations: 2167)
+Completed 200 OK in 83ms (Views: 70.3ms | ActiveRecord: 1.0ms | Allocations: 5504)
+
+
